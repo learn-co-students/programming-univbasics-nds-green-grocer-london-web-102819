@@ -14,15 +14,6 @@ def consolidate_cart(cart)
   new_cart.uniq
 end
 
-cart = [
-  {:item => "AVOCADO", :price => 3.00, :clearance => true },
-  {:item => "AVOCADO", :price => 3.00, :clearance => true },
-  {:item => "KALE", :price => 3.00, :clearance => false}
-]
-
-coupons = [{:item => "AVOCADO", :num => 2, :cost => 5.00}]
-
-
 def apply_coupons(cart, coupons)
 
   cart.each do |item|
