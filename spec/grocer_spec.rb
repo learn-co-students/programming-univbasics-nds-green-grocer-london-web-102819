@@ -1,3 +1,4 @@
+require "pry"
 describe "Grocer" do
   # let() is like a global variable for tests
   let(:items) do
@@ -118,8 +119,11 @@ describe "Grocer" do
         avocado_coupon = coupons.first
         perfect_avocado_cart = [ avocado, avocado ]
         consolidated_cart = consolidate_cart(perfect_avocado_cart)
+        # binding.pry
         coupon_applied_cart = apply_coupons(consolidated_cart, [avocado_coupon])
+        
         original_item = find_item_by_name_in_collection(item_name, coupon_applied_cart)
+        # binding.pry
         expect(original_item[:price]).to eq(3.00)
         expect(original_item[:count]).to eq(0)
       end
